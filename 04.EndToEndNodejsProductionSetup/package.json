@@ -1,0 +1,17 @@
+{
+  "name": "ts-backend-production-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test":"node test.js",
+    "start": "index.js",
+    "prepare": "husky"
+  },
+  "author": "ayush",
+  "license": "ISC",
+  "dependencies": {
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10"
+  }
+}
