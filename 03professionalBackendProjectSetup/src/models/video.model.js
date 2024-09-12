@@ -12,7 +12,7 @@ const videoSchema = new Schema (
       required:true,
      },
      owner:{
-     type:Schema.Types.ObjectId,
+     type:mongoose.Schema.Types.ObjectId,
      ref:"User"
      },
      title:{
@@ -37,6 +37,13 @@ const videoSchema = new Schema (
 },
      }
 ,{timestamps:true});
+
+/* moggose ka aggration pippeline yahi mongoose ko baht powerfull and  batnata hai ya kaffi 
+bad me introduce hua tha to is plugin ke sath use karte hai
+means ye dekho kon kon se plugins hote hai unka kya use hota hai kaise use karte hai
+
+*/
+
 videoSchema.plugin(mongooseAggregatePaginate);
 
 export const Video = mongoose.model("Video",videoSchema);
