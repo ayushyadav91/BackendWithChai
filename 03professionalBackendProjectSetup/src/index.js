@@ -4,7 +4,8 @@ import { app } from "./app.js";
 
 dotenv.config({ path: './env' });
 
-connectDB()
+connectDB() /*we right db asynconous method so async return  promise
+mean async jub bhi complete hota hai to ek promise return karta hai kaffi code bases me dekhne ko milega*/
 .then(()=>{
      app.on("error",(error)=>{
           console.log("error:",error);
@@ -16,3 +17,13 @@ connectDB()
 }).catch((error)=>{
      console.log("Mongo db connection failed !!!", error)
 })
+
+
+
+
+// import express from "express"
+// const app = express();
+
+// ;(async ()=>{
+
+// })
