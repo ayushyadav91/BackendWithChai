@@ -2,7 +2,7 @@ class ApiError extends Error {
      constructor(
           statusCode,
           message = "Something went wrong",
-          error = [],
+          errors= [],
           stack = "",
      ){
           super(message)
@@ -12,6 +12,9 @@ class ApiError extends Error {
           this.success = false
           this.errors = errors
 
+
+          //ye stack me errors ko dekhne ke leye use karte hai taki pata chale kii kiss kiss file me error aarahi hai
+          // ye production me haata bhi dete hai isse
           if(stack){
                this.stack = stack
           } else {

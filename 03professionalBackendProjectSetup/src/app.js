@@ -10,6 +10,7 @@ app.use(cors({
      origin:process.env.CORS_ORIGIN,
      credentials:true,
 }));
+
 //middleware 2 jo data aaraha hai json me kuch limit to rakhne padegi na varna server 
 // crash nh hojayega to jo data aata jai uske leye aise bhi kaam karte hai 
 // same aise he kuch POST CALL me padete time padhata tha tmne
@@ -24,6 +25,9 @@ app.use(express.urlencoded({extended:true, limit:"16kb"}));//yaha pe limit  cons
 app.use(express.static("public"));
 
 //middleware 5
+//iska kaam bus itna hai kii mere user ke ander ka jo browser hai uski cookike ko access kur pao aur uski cookie set bhi kur pao
+//mean CRUD opration perform kur paro COOKIKES pe
+//because kuch taike hote hai jise secure cookies user ke borowe me rakh padte hai un cookies ko server he reed kur sakta hai aur server he movie kur sakta hai subjagah production grade me user hai
 app.use(cookieParser({}))
 
 
