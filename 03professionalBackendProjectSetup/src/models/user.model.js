@@ -52,14 +52,31 @@ const userSchema = new Schema(
 {timestamps:true});
 
 //Here bcrypt the passwrod
+//This is the pre Hooks that is used to hash the password before saving it to the database
 userSchema.pre("save", async function (next) {
-     if(this.isModified("password")) return next();
- this.password = bcrypt.hash(this.password,10);
+     if(!this.isModified("password")) return next();
+ this.password =await bcrypt.hash(this.password,10);
  next();
-})
+});
+// userSchema.statics.hashPassword = async function (password) {
+//      //This is the static method that is used to hash the password before saving it to the database
+//      return await bcrypt.hash(password, 10);
+// }
+
+
+
+
+
 userSchema.methods.isPasswrodCorrect = async function(password){
      return await bcrypt.compare(password, this.password)
 }
+// userSchema.methods.isValidPassword = async function (password) {
+//      console.log(this.password);
+//      return await bcrypt.compare(password, this.password);
+// }
+
+
+
 
 userSchema.method.generateAccessToekn = function(){
      jwt.sign({

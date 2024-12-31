@@ -12,7 +12,7 @@ mean async jub bhi complete hota hai to ek promise return karta hai kaffi code b
           throw error
      })
      app.listen(process.env.PORT || 8000,()=>{
-  console.log(`Server is running at port : Server is running at port ${process.env.PORT}`);
+  console.log(`Server is running at port : ${process.env.PORT}`);
  })
 }).catch((error)=>{
      console.log("Mongo db connection failed !!!", error)

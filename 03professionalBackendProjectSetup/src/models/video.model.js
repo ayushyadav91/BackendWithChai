@@ -1,4 +1,4 @@
-import mongoose, {schema} from "mongoose";
+import mongoose, {Schema} from "mongoose";
 import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 const videoSchema = new Schema (
@@ -37,6 +37,8 @@ const videoSchema = new Schema (
 },
      }
 ,{timestamps:true});
+
+
 
 /* moggose ka aggration pippeline yahi mongoose ko baht powerfull and  batnata hai ya kaffi 
 bad me introduce hua tha to is plugin ke sath use karte hai
