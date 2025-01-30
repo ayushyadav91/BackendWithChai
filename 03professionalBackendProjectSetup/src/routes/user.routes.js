@@ -28,7 +28,7 @@ userRouter.route("/login").post(userController.loginUser);
 //userRouter.get("/me", userController.getMe);
 userRouter.route("/logout").post(verifyJWT, userController.logoutUser);
 
-userRouter.route("refresh-token").post(userController.refreshAccessToken)
+userRouter.route("/refresh-token").post(userController.refreshAccessToken)
 
 
 
